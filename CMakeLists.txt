@@ -1,0 +1,21 @@
+set(CMAKE_VERBOSE_MAKEFILE OFF)
+
+set(PROJECT_CMAKE_PATH ${CMAKE_SOURCE_DIR}/devOps/cmake)
+
+list(APPEND CMAKE_MODULE_PATH ${PROJECT_CMAKE_PATH})
+
+set(INSTALL_BASE ${CMAKE_SOURCE_DIR}/install)
+
+set(CMAKE_C_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+set(TARGET_NAME recharge)
+
+project(Recharge)
+
+isARunnable(${TARGET_NAME})
+
+target_sources(${TARGET_NAME} PRIVATE
+		src/main.cpp
+		)
